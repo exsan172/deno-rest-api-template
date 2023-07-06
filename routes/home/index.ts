@@ -1,7 +1,7 @@
-import { Router } from "https://deno.land/x/oak@v12.5.0/mod.ts";
+import { Oak } from "../../deps.ts";
 import Controllers from "../../controllers/index.ts";
 
-const router = new Router()
+const router = new Oak.Router()
 
 router.get("/", Controllers.HomeController.getAll)
 

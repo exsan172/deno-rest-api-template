@@ -1,12 +1,12 @@
 // deno-lint-ignore-file
-import { Context } from "https://deno.land/x/oak@v12.5.0/mod.ts"
+import { Oak } from "../../deps.ts"
 
 interface ErrorInterface {
     filed : string,
     message : string
 }
 
-const Response = (ctx:Context, statusCode:number, message:string, data:any=[], errors?:Array<ErrorInterface> ) => {
+const Response = (ctx:Oak.Context, statusCode:number, message:string, data:any=[], errors?:Array<ErrorInterface> ) => {
     return ctx.response.body = {
         statusCode : statusCode,
         message    : message,
