@@ -1,9 +1,7 @@
-import { Context } from "https://deno.land/x/oak@v12.5.0/mod.ts";
+import HomeController from "./home/index.ts";
 
 const Controllers = {
-    getData : (ctx:Context) => {
-        ctx.response.body = "kontol !"
-    }
+    HomeController
 }
 
 export default Controllers

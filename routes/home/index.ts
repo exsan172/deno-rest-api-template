@@ -3,6 +3,6 @@ import Controllers from "../../controllers/index.ts";
 
 const router = new Router()
 
-router.get("/", Controllers.getData)
+router.get("/", Controllers.HomeController.getAll)
 
 export default router.routes()
