@@ -1,7 +1,10 @@
 import Response from "./resposeStructure/index.ts"
+import { mongodbConnection, database } from "./mongodbConnection/index.ts"
 
 const Configs = {
-    Response
+    Response,
+    mongodbConnection,
+    database
 }
 
 export default Configs

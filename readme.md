@@ -8,7 +8,10 @@
 <p>
 - Using vs code extensions for deno 
 <a href="https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno"> You will found here </a>
-</p> 
+</p>
+<p>
+- Manage your dependencies in file dependencies.ts
+</p>
 <br/>
 
 <h2> 🤖 Dependencies : </h2>
@@ -18,15 +21,17 @@
 <p>
     ✅ Mongodb
 </p>
-<p>
-    ✅ organ
-</p>
 <br/>
 
 <h2>ℹ️ How to start : </h2>
 <p>
     Like nodejs in deno have deno.json, you can modify it.
 </p>
+<br/>
+
+<h3>Install dependencies</h3>
+<code>deno task install</code>
+<br/>
 <br/>
 
 <h3>Start production mode</h3>

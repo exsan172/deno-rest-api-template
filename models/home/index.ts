@@ -1,8 +1,15 @@
-const homeModels = () => {
-    return {
-        name : "Jhon Doe",
-        address : "Earth"
+import Configs from "../../configs/index.ts"
+interface HomeSchema {
+    name : {
+        type : string,
+        required : true
+    },
+    address : {
+        type : string,
+        required : true
     }
 }
 
-export default homeModels
+const home = await Configs.database().collection<HomeSchema>("home")
+
+export default home

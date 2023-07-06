@@ -1,4 +1,4 @@
-import { Oak } from "../../deps.ts"
+import { Oak } from "../../dependencies.ts"
 import Services from "../../services/index.ts"
 import Configs from "../../configs/index.ts"
 
