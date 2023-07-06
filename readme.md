@@ -16,10 +16,13 @@
 
 <h2> 🤖 Dependencies : </h2>
 <p>
-    ✅ OAK
+    ✅ oak
 </p>
 <p>
-    ✅ Mongodb
+    ✅ deno_mongo
+</p>
+<p>
+    ✅ moment
 </p>
 <br/>
 
