@@ -7,6 +7,8 @@ const app  = new Oak.Application();
 const port = Number(Deno.env.get("PORT"))
 Configs.connect
 
+
+app.use(Middlewares.Cors)
 app.use(Middlewares.Loger)
 app.use(Middlewares.TimeCounter)
 app.use(Middlewares.Handle404)
