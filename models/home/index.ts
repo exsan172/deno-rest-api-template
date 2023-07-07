@@ -1,15 +1,11 @@
 import Configs from "../../configs/index.ts"
 interface HomeSchema {
-    name : {
-        type : string,
-        required : true
-    },
-    address : {
-        type : string,
-        required : true
-    }
+    _id : string,
+    name : string,
+    address : string
 }
 
-const home = await Configs.database().collection<HomeSchema>("home")
+const home = Configs.db.collection<HomeSchema>("home")
 
 export default home
+export type { HomeSchema };

@@ -5,7 +5,7 @@ import Middlewares from "./middlewares/index.ts";
 
 const app  = new Oak.Application();
 const port = Number(Deno.env.get("PORT"))
-await Configs.mongodbConnection()
+Configs.connect
 
 app.use(Middlewares.Loger)
 app.use(Middlewares.TimeCounter)

@@ -1,7 +1,7 @@
 import home from "./home/index.ts"
 
 const Models = {
-    // home
+    home
 }
 
 export default Models
