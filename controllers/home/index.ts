@@ -1,7 +1,7 @@
 import { Oak } from "../../dependencies.ts"
 import Services from "../../services/index.ts"
 import Configs from "../../configs/index.ts"
-import { HomeSchema } from "../../models/home/index.ts"
+import { Home } from "../../models/home/index.ts"
 
 const HomeController = {
     getAll : async (cntx:Oak.Context) => {
@@ -29,7 +29,7 @@ const HomeController = {
         try {
             const id   = await cntx.params.id
             const data = cntx.request.body()
-            const value : HomeSchema = await data.value
+            const value : Home = await data.value
             
             await Services.homeService.update(id, value)
             const getLatestData = await Services.homeService.getOne(id)
@@ -56,12 +56,10 @@ const HomeController = {
     create : async (cntx:Oak.Context) => {
         try {
             const data = await cntx.request.body()
-            const value : HomeSchema = await data.value
+            const value : Home = await data.value
             
             const createData = await Services.homeService.create(value)
-            const getComplitedData = await Services.homeService.getOne(createData.toString())
-
-            return await Configs.Response(cntx, Configs.Code.OK, "Success", getComplitedData)
+            return await Configs.Response(cntx, Configs.Code.OK, "Success", createData)
             
         } catch (error) {
             return await Configs.Response(cntx, Configs.Code.BAD_REQUEST, error.message)

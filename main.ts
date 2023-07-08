@@ -5,7 +5,7 @@ import Middlewares from "./middlewares/index.ts";
 
 const app  = new Oak.Application();
 const port = Number(Deno.env.get("PORT"))
-Configs.connect
+Configs.db
 
 
 app.use(Middlewares.Cors)

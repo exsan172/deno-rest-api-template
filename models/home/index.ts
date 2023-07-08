@@ -1,11 +1,18 @@
-import Configs from "../../configs/index.ts"
-interface HomeSchema {
-    _id : string,
+import { mongoose } from "../../dependencies.ts"
+
+const HomeSchema = new mongoose.Schema({
+    name : {
+        type : String,
+        require : true
+    },
+    address : {
+        type : String,
+        require : true
+    },
+})
+export interface Home {
     name : string,
     address : string
 }
 
-const home = Configs.db.collection<HomeSchema>("home")
-
-export default home
-export type { HomeSchema };
+export default mongoose.model<Home>("home", HomeSchema)

@@ -1,16 +1,11 @@
-import { mongodb } from "../../dependencies.ts";
+import { mongoose } from "../../dependencies.ts";
 
-const mongoDbUrl        = Deno.env.get("MONGO_DB_URI")    
-const mongoDatabaseName = Deno.env.get("MONGO_DB_NAME")  
+const mongoDbUrl = Deno.env.get("MONGO_DB_URI")    
+export const db = await mongoose.connect(mongoDbUrl as string)
 
-const client = new mongodb.MongoClient()
-export const connect = await client.connect(mongoDbUrl as string)
-
-if(connect) {
+if(db) {
     console.log("Success Connection Database !");
     
 } else {
     console.log("Failed Connection Database !");
 }
-
-export const db = client.database(mongoDatabaseName)

@@ -1,33 +1,25 @@
-import { mongodb } from "../../dependencies.ts"
 import Models from "../../models/index.ts"
-import { HomeSchema } from "../../models/home/index.ts"
+import { Home } from "../../models/home/index.ts"
 
 const homeService = {
     getAll : async () => {
-        return await Models.home.find({}).toArray()
+        return await Models.home.find({})
     },
     
     getOne : async (id:string) => {
-        const idObj = new mongodb.ObjectId(id)
-        return await Models.home.findOne({ _id : idObj })
+        return await Models.home.findOne({ _id : id })
     },
 
-    update : async (id:string, data:HomeSchema) => {
-        const idObj   = new mongodb.ObjectId(id)
-        const dataObj = {
-            $set: data
-        }
-        
-        return await Models.home.updateOne({ _id: idObj }, dataObj)
+    update : async (id:string, data:Home) => {
+        return await Models.home.updateOne({ _id: id }, data)
     },
 
-    create : async (data:HomeSchema) => {
-        return await Models.home.insertOne(data)
+    create : async (data:Home) => {
+        return await Models.home.create(data)
     },
 
     delete : async (id:string) => {
-        const idObj = new mongodb.ObjectId(id)
-        return await Models.home.deleteOne({ _id:idObj })
+        return await Models.home.deleteOne({ _id:id })
     }
 }
 
