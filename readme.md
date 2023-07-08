@@ -22,6 +22,9 @@
     ✅ deno_mongo
 </p>
 <p>
+    ✅ In latest version using mongoose
+</p>
+<p>
     ✅ moment
 </p>
 <br/>
