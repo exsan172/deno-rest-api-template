@@ -84,6 +84,27 @@
     └── readme.md
 ```
 <br/>
+<h2>ℹ️ Docekerfile Example : </h2>
+<br/>
+
+```
+#For ARM
+FROM lukechannings/deno:latest
+
+#For X86
+FROM denoland/deno:latest
+
+WORKDIR /app
+
+COPY . .
+ENV PORT=3500
+ENV ALLOW_ORIGIN=*
+ENV MONGO_DB_URI=mongodb://127.0.0.1:27017/DENO
+
+EXPOSE 3500
+
+CMD ["task", "start"]
+```
 
 <h2>🤡 Author : </h2>
 <a href="https://github.com/exsan172">Exsan Renaldhi</a>
